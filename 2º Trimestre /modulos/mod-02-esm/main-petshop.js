@@ -1,6 +1,13 @@
-// MODULO ESM é a versão
+// MODÚLO ESM é a versão 
 // moderna e recomendada
-// utilizada import/export
+// utiliza import/export
+ 
+import{ banhoGato, tosaGato, alimentarGato} from './petshop.js'
 
-import { banhoGato, tosaGato, alimentarGato}from './petshop.
+console.log(banhoGato('Angorá','completo'))
+
+console.log(tosaGato('Angorá','barato'));
+
+console.log(alimentarGato('Angorá','pediscos'))
+
 
