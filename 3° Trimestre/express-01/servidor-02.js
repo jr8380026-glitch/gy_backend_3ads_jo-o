@@ -1,8 +1,9 @@
 import express from 'express'
-import path from path
+import path from 'path'
 const app = express ()
 const porta = 3000 
-// criar rotas  de servidor
+// Usando middleware (software intermediario)
+app.use(express.static(path.join(import.meta.dirname, 'publico')))
 
 app.get('/', (req, res) => {
   res.sendFile('/paginas/index.html', {root: import.meta.dirname})

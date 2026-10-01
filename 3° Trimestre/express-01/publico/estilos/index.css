@@ -1,4 +1,398 @@
-*{background-color:rgb(204, 124, 19);
-  color:rgba(0, 255, 255, 0.521)
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS (Estilo Gourmet)
+   ========================================================================== */
+:root {
+    --cls-bg-creme: #FFFDF0;       /* Creme Amanteigado de fundo */
+    --cls-bg-card: #FFFFFF;        /* Branco Puro para blocos e cards */
+    --cls-rosa-quartzo: #F7CAC9;   /* Rosa suave de suporte */
+    --cls-chocolate: #3D2314;      /* Marrom Escuro para textos principais */
+    --cls-chocolate-light: #5A3925;/* Tom médio para textos secundários */
+    --cls-gold: #D4AF37;           /* Dourado para detalhes e avaliações */
+    --cls-whatsapp: #25D366;       /* Verde oficial do WhatsApp para o CTA */
+    
+    --font-title: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cls-bg-creme);
+    color: var(--cls-chocolate);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.global-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   2. HEADER / NAVEGAÇÃO (Padrão Express Routes)
+   ========================================================================== */
+.main-header {
+    background-color: rgba(255, 253, 240, 0.95);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(61, 35, 20, 0.08);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-title);
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--cls-chocolate-light);
+    font-weight: 400;
+    font-style: italic;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-menu a {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--cls-chocolate-light);
+}
+
+.nav-menu a:hover {
+    color: var(--cls-chocolate);
+    transform: translateY(-1px);
+}
+
+.btn-cta-nav {
+    background-color: var(--cls-chocolate);
+    color: var(--cls-bg-creme);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-cta-nav:hover {
+    background-color: var(--cls-chocolate-light);
+    box-shadow: 0 4px 12px rgba(61, 35, 20, 0.15);
+}
+
+/* ==========================================================================
+   3. HERO SECTION (Anatomia de Alta Conversão)
+   ========================================================================== */
+.hero-section {
+    padding: 60px 0 100px 0;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.badge-urgency {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(61, 35, 20, 0.06);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--cls-chocolate-light);
+}
+
+.badge-urgency i {
+    color: #E67E22;
+}
+
+.hero-content h1 {
+    font-family: var(--font-title);
+    font-size: 52px;
+    line-height: 1.15;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--cls-chocolate);
+}
+
+.hero-content h1 em {
+    font-family: var(--font-title);
+    font-weight: 400;
+    font-style: italic;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: var(--cls-chocolate-light);
+    margin-bottom: 40px;
+    max-width: 520px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-primary {
+    background-color: var(--cls-chocolate);
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background-color: var(--cls-chocolate-light);
+    box-shadow: 0 6px 20px rgba(61, 35, 20, 0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--var-cls-chocolate);
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    border: 1px solid var(--cls-chocolate);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(61, 35, 20, 0.04);
+}
+
+.hero-image-wrapper {
+    position: relative;
+}
+
+.hero-image-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cls-rosa-quartzo);
+    top: 20px;
+    left: 20px;
+    border-radius: 24px;
+    z-index: 1;
+}
+
+.hero-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 24px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 20px 40px rgba(61, 35, 20, 0.12);
+}
+
+/* ==========================================================================
+   4. AUTORIDADE & HIGIENE (Selos)
+   ========================================================================== */
+.features-section {
+    background-color: var(--cls-bg-card);
+    padding: 80px 0;
+    border-top: 1px solid rgba(61, 35, 20, 0.05);
+    border-bottom: 1px solid rgba(61, 35, 20, 0.05);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-icon {
+    font-size: 32px;
+    color: var(--cls-chocolate-light);
+    margin-bottom: 20px;
+    display: inline-block;
+    background-color: var(--cls-bg-creme);
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+}
+
+.feature-card h3 {
+    font-family: var(--font-title);
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    font-size: 15px;
+    color: var(--cls-chocolate-light);
+}
+
+/* ==========================================================================
+   5. PROVA SOCIAL (Testemunhos)
+   ========================================================================== */
+.testimonials-section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--cls-chocolate-light);
+    margin-bottom: 60px;
+    font-size: 16px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--cls-bg-card);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(61, 35, 20, 0.03);
+    border: 1px solid rgba(61, 35, 20, 0.04);
+}
+
+.testimonial-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stars {
+    color: var(--cls-gold);
+    letter-spacing: 2px;
+}
+
+.date {
+    font-size: 13px;
+    color: #999;
+}
+
+.testimonial-text {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--cls-chocolate-light);
+    margin-bottom: 24px;
+}
+
+.testimonial-author strong {
+    display: block;
+    font-size: 16px;
+}
+
+.testimonial-author span {
+    font-size: 13px;
+    color: #888;
+}
+
+/* ==========================================================================
+   6. REDUÇÃO DE ATRITO (WhatsApp Flutuante)
+   ========================================================================== */
+.whatsapp-floating {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--cls-whatsapp);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.whatsapp-floating:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* ==========================================================================
+   7. RESPONSIVIDADE (Mobile Friendly)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    .hero-content h1 {
+        font-size: 40px;
+    }
+    .hero-content p {
+        margin: 0 auto 40px auto;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    .hero-image-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .hero-img {
+        height: 380px;
+    }
+    .features-grid, .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-menu {
+        display: none; /* Em produção, adicione um menu sanduíche aqui */
+    }
+}
